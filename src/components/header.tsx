@@ -30,7 +30,7 @@ const HeaderContainer = styled.header`
 const Logo = styled.h1`
     a{
         font-weight: 200;
-        font-size: 15px;
+        font-size: 12px;
         text-decoration: none;
         color: #ffff;
     }

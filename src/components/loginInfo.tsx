@@ -79,16 +79,17 @@ const Container = styled.div`
 const AdminLink = styled(Link)`
     padding: 5px 10px;
     color: #fff;
+    font-size: 12px;
     text-decoration: none;
 `
 const Name = styled.span`
     color: #fff;
     font-weight: 200;
-    font-size: 15px;
+    font-size: 12px;
 `
 const Button = styled.button`
     padding: 5px 10px;
     color: #fff;
-    font-size: 15px;
+    font-size: 12px;
     cursor: pointer;
 `
