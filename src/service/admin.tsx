@@ -1,13 +1,14 @@
 import { User } from "firebase/auth";
-import { database } from "@/api/api"
 import { equalTo, get, orderByValue, query, ref } from "firebase/database";
+
+import { database } from "@/api/api"
 
 
 interface AdminUser extends User{
     isAdmin : boolean
 }
 
-export async function adminUser(user : User) : Promise<AdminUser | undefined>{
+export async function adminUser(user : User) : Promise<AdminUser | null>{
     const email = user.email ?? "";
 
     try{
@@ -15,8 +16,9 @@ export async function adminUser(user : User) : Promise<AdminUser | undefined>{
         const q = query(adminRef, orderByValue(), equalTo(email));
         const snapshot = await get(q);
         const isAdmin = snapshot.exists();
-        return{...user, isAdmin};
+        return {...user, isAdmin};
     }catch(error){
         console.error(error);
+        return (null)
     }
 }

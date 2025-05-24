@@ -28,43 +28,54 @@ export default function LoginPage(){
 
     return(
         <Container>
-            <Title>Login</Title>
+            <Logo>✳︎</Logo>
+            
             <Form>
-                <Input
-                    type="email"
-                    placeholder="enter your email"
-                />
-                <Input
-                    type="password"
-                    placeholder="enter your password"
-                />
-                <Button type = "submit">Login</Button>
-                <Button type = "button" onClick={googleLoginEvent}>Google Login</Button>
-                {error && <ErrorText>{error}</ErrorText>}
+                <FormInner>
+                    <Input
+                        type="email"
+                        placeholder="enter your email"
+                    />
+                    {/* <Gap></Gap> */}
+                    <Input
+                        type="password"
+                        placeholder="enter your password"
+                    />
+                    <Button type = "submit">Login</Button>
+                    {/* <Button type = "button" onClick={googleLoginEvent}>Google Login</Button> */}
+                    {error && <ErrorText>{error}</ErrorText>}
+                </FormInner>
+                
             </Form>
             <JoinLink href="/join">sign up</JoinLink>
         </Container>
     )
 }
-
 const Container = styled.div`
-    
+
 `
-const Title = styled.h2`
-    
+const Logo = styled.h2`
+    font-size: 24px;
+    color: #888;
 `
-const Form = styled.form`
+const Gap = styled.div`
+
+`
+const Form = styled.div`
+
+`
+const FormInner = styled.form`
     
 `
 const Input = styled.input`
-    
+
 `
 const Button = styled.button`
-    
+
 `
 const ErrorText = styled.span`
     
 `
 const JoinLink = styled(Link)`
-    
+
 `

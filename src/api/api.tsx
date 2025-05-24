@@ -1,13 +1,11 @@
 
 
 
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, updateProfile, User } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 import { adminUser } from "@/service/admin";
-
-
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -48,7 +46,6 @@ export async function googleLogin() : Promise<User | null> {
         return null;
     }
 }
-
 //google Logout
 export async function googleLogout(){
     try{
@@ -57,7 +54,6 @@ export async function googleLogout(){
         console.error(error);
     }
 }
-
 //maintain login state
 export function onUserState(callback : (user : any) => void) : () => void {
     return onAuthStateChanged(auth, async(user) => {
@@ -74,7 +70,6 @@ export function onUserState(callback : (user : any) => void) : () => void {
         }
     })
 }
-
 //signin
 export async function JoinEmail(email : string, password : string, name : string) {
     const auth = getAuth();
@@ -91,6 +86,4 @@ export async function JoinEmail(email : string, password : string, name : string
     }
 }
 
-
-
-export {database};
+export { auth, database };
