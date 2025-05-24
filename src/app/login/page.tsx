@@ -52,14 +52,13 @@ export default function LoginPage(){
     )
 }
 const Container = styled.div`
-
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 12px;
 `
 const Logo = styled.h2`
     font-size: 24px;
     color: #888;
-`
-const Gap = styled.div`
-
 `
 const Form = styled.div`
 
@@ -68,13 +67,15 @@ const FormInner = styled.form`
     
 `
 const Input = styled.input`
-
+    width: 350px;
 `
 const Button = styled.button`
-
+    align-self: flex-end;
 `
 const ErrorText = styled.span`
-    
+    color: red;
+    font-size: 10px;
+    text-align: end;
 `
 const JoinLink = styled(Link)`
 
