@@ -96,10 +96,14 @@ export default function JoinPage(){
 }
 
 const Container = styled.div`
-    
+    display: flex;
+    height: 100vh;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
 `
 const Title = styled.h2`
-    
+    font-size: 20px;
 `
 const Form = styled.form`
     
