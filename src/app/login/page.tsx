@@ -45,34 +45,34 @@ export default function LoginPage(){
 
     return(
         <Page>
-      <Container>
-        <Logo>✳︎</Logo>
-        <Form onSubmit={handleSubmit}>
-            <Input
-                type="text"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-             />
-            <Input
-                type="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-          <BottomRow>
-            <JoinLink href="/join">Sign up</JoinLink>
-            <Button type="submit">Log in</Button>
-          </BottomRow>
-          {error && <ErrorText>{error}</ErrorText>}
-        </Form>
-      </Container>
-    </Page>
+            <Container>
+                <Logo>✳︎</Logo>
+                <Form onSubmit={handleSubmit}>
+                    <Input
+                        type="text"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <Input
+                        type="password"
+                        placeholder="Enter your password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                <BottomRow>
+                    <JoinLink href="/join">Sign up</JoinLink>
+                    <Button type="submit">Log in</Button>
+                </BottomRow>
+                {error && <ErrorText>{error}</ErrorText>}
+                </Form>
+            </Container>
+        </Page>
     )
 }
 const Page = styled.div`
   display: flex;
-  height: 100vh;
+  height: 90vh;
   background-color: black;
   justify-content: center;
   align-items: center;
